@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Pokedex</string>
+
+<!--    Pokemons Activity-->
+    <string name="pokemons_title">PokeDex</string>
+    <string name="pokemons_error_401">Erro</string>
+    <string name="books_error_400_generic">Erro não tratado</string>
+    <string name="books_error_500_generic">Erro catastrófico</string>
 </resources>
