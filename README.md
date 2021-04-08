@@ -8,7 +8,9 @@ Pokedex app feito em Kotlin
 <p>Pensei em fazer um projeto que junte as principais atualizações no desenvolvimento para Android, atualmente programo utilizando Java e nunca usei as novas features, decidi aprender e criar algo legal no processo, se você está aqui e tem uma sugestão para melhorias ou recomendações, sinta-se a vontade para compartilhar. </p>
 
 ## Screenshots
-
+<p>
+  <img src="screenshots/pokemon_list.png" width="270" alt="Pokedex List">
+</p>
 
 
 
