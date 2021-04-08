@@ -5,7 +5,7 @@ Pokedex app feito em Kotlin
 </h1>
 
 ## About
-<p>Pensei em fazer um projeto que junte as principais atualizações no desenvolvimento para Android, atualmente programo utilizando Java e nunca usei as novas features, decidi aprender e criar algo legal no processo, se você está aqui e tem uma sugestão para melhorias ou recomendações, sinta-se a vontade para compartilhar. </p>
+<p>Pensei em fazer um projeto que junte as principais atualizações no desenvolvimento para Android, atualmente programo utilizando Java e nunca usei as novas features, decidi aprender e criar algo legal no processo, se você está aqui e tem uma sugestão para melhorias ou recomendações, sinta-se a vontade para compartilhar. A pokedex ainda não está finalizada, vou construindo ela aos poucos. </p>
 
 ## Screenshots
 <p>
