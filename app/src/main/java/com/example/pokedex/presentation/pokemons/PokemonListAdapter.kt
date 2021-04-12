@@ -15,10 +15,10 @@ class PokemonListAdapter(private val pokemons: List<PokemonList>, private val on
         private val name = itemPokemonBinding.namePokemon
         private val image = itemPokemonBinding.imgPokemon
 
-        fun bindView(pokemon: PokemonList){
-            number.text = "1"
+        fun bindView(pokemon: PokemonList, pokemonNumber: Int){
+            number.text = pokemonNumber.toString()
             name.text = pokemon.name
-            image.load("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png")
+            image.load("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/$pokemonNumber.png")
 
             itemView.setOnClickListener {
                 onItemClickListener.invoke(pokemon)
@@ -32,7 +32,7 @@ class PokemonListAdapter(private val pokemons: List<PokemonList>, private val on
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bindView(pokemons[position])
+        holder.bindView(pokemons[position], position+1)
     }
 
     override fun getItemCount() = pokemons.count()

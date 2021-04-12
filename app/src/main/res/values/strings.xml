@@ -6,4 +6,5 @@
     <string name="pokemons_error_401">Erro</string>
     <string name="books_error_400_generic">Erro não tratado</string>
     <string name="books_error_500_generic">Erro catastrófico</string>
+    <string name="image_background">Image Background</string>
 </resources>
