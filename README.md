@@ -10,6 +10,7 @@ Pokedex app feito em Kotlin
 ## Screenshots
 <p>
   <img src="screenshots/pokemon_list.png" width="270" alt="Pokedex List">
+  <img src="screenshots/pokemon_list2.png" width="270" alt="Pokedex List">
 </p>
 
 
