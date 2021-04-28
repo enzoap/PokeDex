@@ -3,14 +3,14 @@ package com.example.pokedex.presentation.pokemons
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.pokedex.R
 import com.example.pokedex.data.model.PokemonList
 import com.example.pokedex.databinding.ItemPokemonBinding
 import com.example.pokedex.utils.Extensions.Companion.load
+import java.util.*
 
-class PokemonListAdapter(private val pokemons: List<PokemonList>, private val onItemClickListener: ((pokemon: PokemonList, imageUrl: String, numberPokemon: Int) -> Unit)): RecyclerView.Adapter<PokemonListAdapter.ViewHolder>() {
+class PokemonListAdapter(private val pokemons: List<PokemonList>, private val onItemClickListener: (String, Int, String) -> Unit): RecyclerView.Adapter<PokemonListAdapter.ViewHolder>() {
 
-    class ViewHolder(itemPokemonBinding: ItemPokemonBinding, private val onItemClickListener: (pokemon: PokemonList, imageUrl: String, numberPokemon: Int) -> Unit): RecyclerView.ViewHolder(itemPokemonBinding.root){
+    class ViewHolder(itemPokemonBinding: ItemPokemonBinding, private val onItemClickListener: (imageUrl: String, numberPokemon: Int, pokemonName: String) -> Unit): RecyclerView.ViewHolder(itemPokemonBinding.root){
         private val number = itemPokemonBinding.numberPokemon
         private val name = itemPokemonBinding.namePokemon
         private val image = itemPokemonBinding.imgPokemon
@@ -18,11 +18,11 @@ class PokemonListAdapter(private val pokemons: List<PokemonList>, private val on
 
         fun bindView(pokemon: PokemonList, pokemonNumber: Int){
             number.text = pokemonNumber.toString()
-            name.text = pokemon.name
+            name.text = pokemon.name.capitalize(Locale.getDefault())
             image.load("$imageUrl$pokemonNumber.png")
 
             itemView.setOnClickListener {
-                onItemClickListener.invoke(pokemon, "$imageUrl$pokemonNumber.png", pokemonNumber)
+                onItemClickListener.invoke("$imageUrl$pokemonNumber.png", pokemonNumber, pokemon.name.capitalize(Locale.getDefault()))
             }
         }
     }

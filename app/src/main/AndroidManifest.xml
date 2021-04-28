@@ -11,8 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Pokedex">
-        <activity android:name=".presentation.pokemonDetail.PokemonDetail"></activity>
-        <activity android:name=".presentation.pokemons.PokemonsActivity">
+
+        <activity android:name=".presentation.pokemonDetail.PokemonDetail"
+            android:parentActivityName=".presentation.pokemons.PokemonsActivity"/>
+        <activity android:name=".presentation.pokemons.PokemonsActivity"
+            android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

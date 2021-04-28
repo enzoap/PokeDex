@@ -23,11 +23,11 @@ class PokemonsViewModel(private val dataSource: PokemonsRepository): ViewModel()
                     if(result.statusCode == 401){
                         viewFlipperLiveData.value = Pair(VIEW_FLIPPER_ERROR, R.string.pokemons_error_401)
                     }else {
-                        viewFlipperLiveData.value = Pair(VIEW_FLIPPER_ERROR, R.string.books_error_400_generic)
+                        viewFlipperLiveData.value = Pair(VIEW_FLIPPER_ERROR, R.string.pokemon_error_400_generic)
                     }
                 }
                 is PokemonsListResult.ServerError -> {
-                    viewFlipperLiveData.value = Pair(VIEW_FLIPPER_ERROR, R.string.books_error_500_generic)
+                    viewFlipperLiveData.value = Pair(VIEW_FLIPPER_ERROR, R.string.pokemon_error_500_generic)
                 }
             }
 

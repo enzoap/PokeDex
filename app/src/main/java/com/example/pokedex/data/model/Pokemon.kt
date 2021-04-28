@@ -1,12 +1,8 @@
 package com.example.pokedex.data.model
 
 data class Pokemon(
-        val name: String,
-        val number: Int,
-        val hp: Int,
-        val attack: Int,
-        val defense: Int,
-        val speed: Int,
-        val spAtk: Int,
-        val spDef: Int,
+        val baseStat: Int,
+        val statName: String,
+        var type1: String,
+        var type2: String
 )

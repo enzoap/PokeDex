@@ -1,9 +1,11 @@
 package com.example.pokedex.data.repository
 
 import com.example.pokedex.data.ApiService
+import com.example.pokedex.data.PokemonResult
 import com.example.pokedex.data.PokemonsListResult
 import com.example.pokedex.data.model.PokemonList
 import com.example.pokedex.data.response.PokemonBodyResponse
+import com.example.pokedex.data.response.PokemonDetailBodyResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

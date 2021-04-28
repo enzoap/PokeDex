@@ -1,7 +1,7 @@
 package com.example.pokedex.presentation.pokemons
 
-import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -34,8 +34,8 @@ class PokemonsActivity : BaseActivity() {
                 with(binding.recyclerPokemon){
                     layoutManager = LinearLayoutManager(this@PokemonsActivity, RecyclerView.VERTICAL, false)
                     setHasFixedSize(true)
-                    adapter = PokemonListAdapter(it) { pokemon: PokemonList, imageUrl: String, pokemonNumber: Int ->
-                        val intent = Intent(this@PokemonsActivity, PokemonDetail::class.java)
+                    adapter = PokemonListAdapter(it) {imageUrl: String, pokemonNumber: Int, pokemonName: String ->
+                        val intent = PokemonDetail.getStartIntent(this@PokemonsActivity, pokemonNumber, imageUrl, pokemonName)
                         startActivity(intent)
                     }
                 }
@@ -53,4 +53,10 @@ class PokemonsActivity : BaseActivity() {
 
         viewModel.getPokemons()
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("teste", "chegou")
+    }
+
 }
