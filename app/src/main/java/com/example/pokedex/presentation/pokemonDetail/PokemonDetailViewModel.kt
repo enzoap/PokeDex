@@ -6,9 +6,9 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.pokedex.R
 import com.example.pokedex.data.PokemonResult
 import com.example.pokedex.data.model.Pokemon
-import com.example.pokedex.data.repository.PokemonDetailApiDataSource
+import com.example.pokedex.data.repository.PokemonDetailRepository
 
-class PokemonDetailViewModel(private val dataSource: PokemonDetailApiDataSource) : ViewModel() {
+class PokemonDetailViewModel(private val dataSource: PokemonDetailRepository) : ViewModel() {
     val pokemonLiveData: MutableLiveData<List<Pokemon>> = MutableLiveData()
     val errorLiveData: MutableLiveData<Pair<Int, Int?>> = MutableLiveData()
 
@@ -39,7 +39,7 @@ class PokemonDetailViewModel(private val dataSource: PokemonDetailApiDataSource)
     }
 
     @Suppress("UNCHECKED_CAST")
-    class PokemonViewModelFactory(private val dataSource: PokemonDetailApiDataSource) : ViewModelProvider.Factory{
+    class PokemonViewModelFactory(private val dataSource: PokemonDetailRepository) : ViewModelProvider.Factory{
         override fun <T : ViewModel?> create(modelClass: Class<T>): T {
             return PokemonDetailViewModel(dataSource) as T
         }

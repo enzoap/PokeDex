@@ -50,9 +50,15 @@ class PokemonDetail : BaseActivity() {
 
         viewModel.errorLiveData.observe(this, {
             it?.let { status ->
-                if (status.first == SUCESS){
-                    binding.loading.visibility = View.GONE
-                    binding.mainLayout.visibility = View.VISIBLE
+                when (status.first) {
+                    SUCESS -> {
+                        binding.loading.visibility = View.GONE
+                        binding.mainLayout.visibility = View.VISIBLE
+                    }
+                    ERROR -> {
+                        binding.loading.visibility = View.GONE
+                        binding.txtError.visibility = View.VISIBLE
+                    }
                 }
             }
         })
